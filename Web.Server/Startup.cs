@@ -1,3 +1,5 @@
+using Business.Logic;
+using Business.Logic.Algorithms;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -22,6 +24,10 @@ namespace Web.Server
         {
 
             services.AddControllersWithViews();
+
+            services.AddScoped<BalancedParantheses>();
+            services.AddScoped<LongestPrefixSuffix>();
+            services.AddScoped<SortedNumbers>();
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>

@@ -52,10 +52,9 @@ namespace Web.Server.Responses
 
         public static implicit operator JsonResult(RESTResponse r)
         {
-            return new JsonResult(r._innerFormat, new JsonSerializerSettings
+            return new JsonResult(r._innerFormat, new System.Text.Json.JsonSerializerOptions
             {
-                Formatting = Formatting.Indented,
-                ContractResolver = new CamelCasePropertyNamesContractResolver(),
+                WriteIndented = true
             });
         }
     }
