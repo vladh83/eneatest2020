@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business.Logic", "Business.Logic\Business.Logic.csproj", "{A25AA2B9-6E40-4B87-BE3A-A429102827AB}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web.Server", "Web.Server\Web.Server.csproj", "{B711C844-E4CF-4D97-87A9-031E9C5EAE87}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A25AA2B9-6E40-4B87-BE3A-A429102827AB} = {A25AA2B9-6E40-4B87-BE3A-A429102827AB}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business.Logic.Test", "Business.Logic.Test\Business.Logic.Test.csproj", "{0E4D8496-E16B-4B05-84EA-37F50DD25283}"
 EndProject
