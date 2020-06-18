@@ -19,6 +19,7 @@ namespace Web.Server.Controllers
 
         }
 
+        [HttpGet]
         [HttpGet("{b64Expression}")]
         public JsonResult Get(string b64Expression)
         {

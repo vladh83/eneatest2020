@@ -19,7 +19,7 @@ namespace Business.Logic.Algorithms
             if (input.Length == 0)
                 return;
             if (!sRegex.Match(input).Success)
-                throw new Exception("Input contains invalid characters!");
+                throw new Exception("Invalid characters!");
         }
 
         protected override bool OnPerform(string input)

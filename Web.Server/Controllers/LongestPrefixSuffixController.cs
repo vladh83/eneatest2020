@@ -19,15 +19,16 @@ namespace Web.Server.Controllers
 
         }
 
+        [HttpGet]
         [HttpGet("{b64Expression}")]
         public JsonResult Get(string b64Expression)
         {
             return RunAlgorithm(b64Expression, ((Func<string, int, string>)((string decodedExpression, int longestPrefixSuffix) =>
             {
-                if (longestPrefixSuffix > 0 && decodedExpression != null && longestPrefixSuffix <= decodedExpression.Length)
-                    return decodedExpression.Substring(0, longestPrefixSuffix);
+                if (longestPrefixSuffix > 0)
+                    return longestPrefixSuffix.ToString() + " - " + decodedExpression.Substring(0, longestPrefixSuffix);
                 else
-                    return "";
+                    return "0";
             })));
         }
     }
