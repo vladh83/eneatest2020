@@ -103,27 +103,33 @@ async checkSortedNumbers(event) {
             <div className="algorithmSection">
                 <h3>Check for balanced parentheses</h3>
                 <div className="algorithmContents">
-                    <input type="text" placeholder="Input" value={this.state.bpIn} onChange={this.handleBPChange} />
-                    <button onClick={this.checkBalanced}>Check balanced</button>
-                    <label placeholder="Output" className={`${this.state.bpOutCls}`}>{this.state.bpOut}</label>
+                    <div>
+                        <input type="text" placeholder="Input" value={this.state.bpIn} onChange={this.handleBPChange} className="algorithmInput" />
+                        <button className="algorithmTrigger" onClick={this.checkBalanced}>Check balanced</button>
+                    </div>
+                    <label placeholder="Output" className={`algorithmOutput ${this.state.bpOutCls}`}>{this.state.bpOut}</label>
                 </div>
             </div>
             <hr />
             <div className="algorithmSection">
                 <h3>Determine the longest prefix which is also suffix</h3>
                 <div className="algorithmContents">
-                    <input type="text" placeholder="Input" value={this.state.lpsIn} onChange={this.handleLPSChange} />
-                    <button onClick={this.determineLongestPrefix}>Determine longest prefix</button>
-                    <label placeholder="Output" className={`${this.state.lpsOutCls}`}>{this.state.lpsOut}</label>
+                    <div>
+                        <input type="text" placeholder="Input" value={this.state.lpsIn} onChange={this.handleLPSChange} className="algorithmInput" />
+                        <button className="algorithmTrigger" onClick={this.determineLongestPrefix}>Determine longest prefix</button>
+                    </div>
+                    <label placeholder="Output" className={`algorithmOutput ${this.state.lpsOutCls}`}>{this.state.lpsOut}</label>
                 </div>
             </div>
             <hr />
             <div className="algorithmSection">
                 <h3>Check for list of sorted numbers</h3>
                 <div className="algorithmContents">
-                    <input type="text" placeholder="Input" value={this.state.snIn} onChange={this.handleListChange} />
-                    <button onClick={this.checkSortedNumbers}>Check sorted numbers</button>
-                    <label placeholder="Output" className={`${this.state.snOutCls}`}>{this.state.snOut}</label>
+                    <div>
+                        <input type="text" placeholder="Input" value={this.state.snIn} onChange={this.handleListChange} className="algorithmInput" />
+                        <button className="algorithmTrigger" onClick={this.checkSortedNumbers}>Check sorted numbers</button>
+                    </div>
+                    <label placeholder="Output" className={`algorithmOutput ${this.state.snOutCls}`}>{this.state.snOut}</label>
                 </div>
             </div>
       </div>

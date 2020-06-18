@@ -13,6 +13,19 @@
     border-radius: 8px;
 }
 
+.algorithmTrigger {
+    margin: 10px;
+}
+
+.algorithmInput {
+    border: 1px solid black;
+    width: 700px;
+}
+
+.algorithmOutput {
+    width: 700px;
+}
+
 .algorithmOk {
     color: blue;
 }
