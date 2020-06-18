@@ -13,6 +13,10 @@
     border-radius: 8px;
 }
 
-.button {
-    padding: 20px;
+.algorithmOk {
+    color: blue;
+}
+
+.algorithmError {
+    color: red;
 }

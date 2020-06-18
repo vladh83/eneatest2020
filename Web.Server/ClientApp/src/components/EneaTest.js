@@ -13,7 +13,10 @@ export class EneaTest extends Component {
         snIn: '',
         bpOut: '',
         lpsOut: '',
-        snOut: ''
+        snOut: '',
+        bpOutCls: 'algorithmOk',
+        lpsOutCls: 'algorithmOk',
+        snOutCls: 'algorithmOk'
     };
 
     this.handleBPChange = this.handleBPChange.bind(this);
@@ -46,8 +49,14 @@ async checkBalanced(event) {
         
     if (response.ok) {
         const data = await response.json();
+        if (data[0] !== 0) {
+            this.setState({ bpOutCls: 'algorithmError' });
+        } else {
+            this.setState({ bpOutCls: 'algorithmOk' });
+        }
         this.setState({ bpOut: data[1] });
     } else {
+        this.setState({ bpOutCls: 'algorithmError' });
         this.setState({ bpOut: 'Encountered error!' });
     }
 }
@@ -58,8 +67,14 @@ async determineLongestPrefix(event) {
 
     if (response.ok) {
         const data = await response.json();
+        if (data[0] !== 0) {
+            this.setState({ lpsOutCls: 'algorithmError' });
+        } else {
+            this.setState({ lpsOutCls: 'algorithmOk' });
+        }
         this.setState({ lpsOut: data[1] });
     } else {
+        this.setState({ lpsOutCls: 'algorithmError' });
         this.setState({ lpsOut: 'Encountered error!' });
     }
 }
@@ -70,8 +85,14 @@ async checkSortedNumbers(event) {
 
     if (response.ok) {
         const data = await response.json();
+        if (data[0] !== 0) {
+            this.setState({ snOutCls: 'algorithmError' });
+        } else {
+            this.setState({ snOutCls: 'algorithmOk' });
+        }
         this.setState({ snOut: data[1] });
     } else {
+        this.setState({ snOutCls: 'algorithmError' });
         this.setState({ snOut: 'Encountered error!' });
     }
 }
@@ -84,7 +105,7 @@ async checkSortedNumbers(event) {
                 <div className="algorithmContents">
                     <input type="text" placeholder="Input" value={this.state.bpIn} onChange={this.handleBPChange} />
                     <button onClick={this.checkBalanced}>Check balanced</button>
-                    <label placeholder="Output">{this.state.bpOut}</label>
+                    <label placeholder="Output" className={`${this.state.bpOutCls}`}>{this.state.bpOut}</label>
                 </div>
             </div>
             <hr />
@@ -93,7 +114,7 @@ async checkSortedNumbers(event) {
                 <div className="algorithmContents">
                     <input type="text" placeholder="Input" value={this.state.lpsIn} onChange={this.handleLPSChange} />
                     <button onClick={this.determineLongestPrefix}>Determine longest prefix</button>
-                    <label placeholder="Output">{this.state.lpsOut}</label>
+                    <label placeholder="Output" className={`${this.state.lpsOutCls}`}>{this.state.lpsOut}</label>
                 </div>
             </div>
             <hr />
@@ -102,7 +123,7 @@ async checkSortedNumbers(event) {
                 <div className="algorithmContents">
                     <input type="text" placeholder="Input" value={this.state.snIn} onChange={this.handleListChange} />
                     <button onClick={this.checkSortedNumbers}>Check sorted numbers</button>
-                    <label placeholder="Output">{this.state.snOut}</label>
+                    <label placeholder="Output" className={`${this.state.snOutCls}`}>{this.state.snOut}</label>
                 </div>
             </div>
       </div>
